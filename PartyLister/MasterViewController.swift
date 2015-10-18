@@ -24,7 +24,12 @@ class MasterViewController: UITableViewController {
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            
+            
         }
+        
+        let validator = ValidateUser(user: "Dale", password: "foo")
+        validator.validateUser()
     }
 
     override func viewWillAppear(animated: Bool) {
