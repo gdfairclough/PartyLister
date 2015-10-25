@@ -66,7 +66,7 @@ class ValidateUser {
         }
         
         Alamofire.request(.GET, "http://dalepi.duckdns.org:85")
-            .responseString {
+            .responseJSON {
                 //code placed in a callback so it is performed asynchronously and doesn't block the main thread
                 response in
                 
