@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CreateEventViewController: UIViewController {
+class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var event: Event?{
         
@@ -46,6 +46,10 @@ class CreateEventViewController: UIViewController {
     
     override func viewDidLoad() {
         //set controllerState to .Display if userId doesn't match admins for event
+        nameField.delegate = self
+        locationField.delegate = self
+        descriptionField.delegate = self
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -126,6 +130,26 @@ class CreateEventViewController: UIViewController {
             
             
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        
+        if textView.text == "Enter Event Info"{
+            
+            textView.text = ""
+        }
+        
+        return true
+    }
+    
+    
+    
 }
 
 
