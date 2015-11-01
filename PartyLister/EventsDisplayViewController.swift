@@ -22,8 +22,9 @@ class EventsDisplayViewController: UITableViewController{
         tableView.delegate = self
         tableView.dataSource = self
         
-        let validator = ValidateUser(user: "Dale", password: "foo")
-        validator.validateUser()
+        //let validator = ValidateUser(user: "Dale", password: "foo")
+        //validator.validateUser()
+        //LibraryAPI.sharedInstance.testEventCreate()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -82,6 +83,7 @@ class EventsDisplayViewController: UITableViewController{
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    
 
 
 }

@@ -11,7 +11,7 @@ import Foundation
 class LibraryAPI: NSObject {
     
     private let persistencyManager: PersistencyManager
-    private let httpClient: HTTPClient
+    private let serverClient: HTTPClient
     private let isOnline: Bool
     
     //used to access the EventStore
@@ -27,7 +27,7 @@ class LibraryAPI: NSObject {
     
     override init() {
         persistencyManager = PersistencyManager()
-        httpClient = HTTPClient()
+        serverClient = HTTPClient()
         isOnline = false
         
         super.init()
@@ -36,10 +36,13 @@ class LibraryAPI: NSObject {
     //MARK: Event Methods 
     func getEvents()->[Event]{
         
+        //attempt to load events from server if empty
+        
         return persistencyManager.getEvents()
     }
     
     func getEventForIndex(index: Int)->Event{
+        //attempt to load events from server if empty 
         
         return persistencyManager.getEventForIndex(index)
     }
@@ -47,10 +50,21 @@ class LibraryAPI: NSObject {
     func addEvent(newEvent: Event){
         
         persistencyManager.addEvent(newEvent)
+        serverClient.addEvent(newEvent)
     }
     
     func changeEvent(atIndex index: Int, newEvent: Event){
         persistencyManager.changeEvent(atIndex: index, newEvent: newEvent)
+        serverClient.changeEvent(atIndex: index, newEvent: newEvent)
+    }
+    
+    func testEventCreate(){
+        
+        let date = NSDate()
+        
+        let event = Event(id: 0, name: "Celebrate Samhain", location: "Noelle's", date: date, start: date, end: date, description: "Woot")
+        
+        serverClient.addEvent(event)
     }
     
     
