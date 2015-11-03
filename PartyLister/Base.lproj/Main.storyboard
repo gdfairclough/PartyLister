@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Party Lister" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKi-Fs-RmG">
-                                <rect key="frame" x="20" y="20" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="20" width="560" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -52,13 +52,20 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0Y-pf-bKE">
-                                <rect key="frame" x="231" y="562" width="138" height="30"/>
+                                <rect key="frame" x="231" y="459" width="138" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Create new account"/>
                                 <connections>
                                     <action selector="createNewAccount:" destination="ZXq-UR-dsK" eventType="touchUpInside" id="W7h-fb-bmu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYp-Br-pvH">
+                                <rect key="frame" x="294" y="437" width="12" height="14.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,15 +75,17 @@
                             <constraint firstItem="Gcu-uT-FHU" firstAttribute="width" secondItem="u74-zH-Mwh" secondAttribute="width" id="Ah9-fb-B3u"/>
                             <constraint firstItem="Gcu-uT-FHU" firstAttribute="trailing" secondItem="u74-zH-Mwh" secondAttribute="trailing" id="G5g-Ch-bzK"/>
                             <constraint firstItem="u74-zH-Mwh" firstAttribute="top" secondItem="ZJf-SQ-GAK" secondAttribute="bottom" constant="8" symbolic="YES" id="IWO-la-szD"/>
+                            <constraint firstItem="h0Y-pf-bKE" firstAttribute="top" secondItem="PYp-Br-pvH" secondAttribute="bottom" constant="8" symbolic="YES" id="KgW-zo-GX6"/>
+                            <constraint firstItem="FeO-dn-eNf" firstAttribute="top" secondItem="ZJf-SQ-GAK" secondAttribute="bottom" constant="285" id="L2v-wK-6yE"/>
                             <constraint firstItem="CAn-bx-wNe" firstAttribute="top" secondItem="Gcu-uT-FHU" secondAttribute="bottom" constant="8" symbolic="YES" id="LlN-wX-Ias"/>
                             <constraint firstItem="h0Y-pf-bKE" firstAttribute="centerX" secondItem="lIR-C3-Xtb" secondAttribute="centerX" id="Oe5-IT-wNY"/>
+                            <constraint firstItem="PYp-Br-pvH" firstAttribute="centerX" secondItem="lIR-C3-Xtb" secondAttribute="centerX" id="Ugj-Te-hYp"/>
                             <constraint firstItem="u74-zH-Mwh" firstAttribute="leading" secondItem="ZJf-SQ-GAK" secondAttribute="leading" id="dHB-Si-gRh"/>
                             <constraint firstItem="CAn-bx-wNe" firstAttribute="centerX" secondItem="lIR-C3-Xtb" secondAttribute="centerX" id="hbo-Ny-Rma"/>
-                            <constraint firstItem="ZJf-SQ-GAK" firstAttribute="centerY" secondItem="lIR-C3-Xtb" secondAttribute="centerY" id="odJ-s3-00C"/>
+                            <constraint firstItem="PYp-Br-pvH" firstAttribute="top" secondItem="CAn-bx-wNe" secondAttribute="bottom" constant="8" symbolic="YES" id="hyZ-ye-m1z"/>
                             <constraint firstItem="u74-zH-Mwh" firstAttribute="trailing" secondItem="ZJf-SQ-GAK" secondAttribute="trailing" id="qkO-Sm-uyp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZKi-Fs-RmG" secondAttribute="trailing" id="sqJ-qx-zZb"/>
                             <constraint firstItem="ZKi-Fs-RmG" firstAttribute="leading" secondItem="lIR-C3-Xtb" secondAttribute="leadingMargin" id="vLT-Ok-pbJ"/>
-                            <constraint firstItem="FeO-dn-eNf" firstAttribute="top" secondItem="h0Y-pf-bKE" secondAttribute="bottom" constant="8" symbolic="YES" id="vg6-oS-mwX"/>
                             <constraint firstItem="Gcu-uT-FHU" firstAttribute="top" secondItem="u74-zH-Mwh" secondAttribute="bottom" constant="8" symbolic="YES" id="ylJ-Zu-3bl"/>
                             <constraint firstItem="ZKi-Fs-RmG" firstAttribute="top" secondItem="eu0-Hf-WfZ" secondAttribute="bottom" id="zbv-B9-7hc"/>
                         </constraints>
@@ -85,6 +94,7 @@
                         <outlet property="emailTextField" destination="Gcu-uT-FHU" id="r46-Hv-bJI"/>
                         <outlet property="loginButton" destination="CAn-bx-wNe" id="ahN-gM-8cA"/>
                         <outlet property="newAccButton" destination="h0Y-pf-bKE" id="uAz-BZ-zJc"/>
+                        <outlet property="orLabel" destination="PYp-Br-pvH" id="Umz-ho-No0"/>
                         <outlet property="passwordTextField" destination="u74-zH-Mwh" id="QGv-Fy-2Bz"/>
                         <outlet property="userNameTextField" destination="ZJf-SQ-GAK" id="fJ8-9K-jPh"/>
                     </connections>
