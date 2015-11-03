@@ -20,12 +20,12 @@ class LoginAndNewAccViewController: UIViewController {
     @IBOutlet weak var newAccButton: UIButton!
     
     // MARK: Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        // Do any additional setup after loading the view.
+//    }
+//    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
