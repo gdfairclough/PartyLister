@@ -22,8 +22,8 @@ class LoginAndNewAccViewController: UIViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        emailTextField.enabled = false
+        emailTextField.hidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,13 +33,14 @@ class LoginAndNewAccViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func login(sender: UIButton) {
-        // TODO: Call the build JSON object method
-        // TODO: Call the send to server method
+        // TODO: Validate
     }
     
     @IBAction func createNewAccount(sender: UIButton) {
-        // TODO: Animate e-mail textfield
-        // TODO: Change the login button text to create acc
+        emailTextField.hidden = false
+        emailTextField.enabled = true
+        
+        loginButton.titleLabel?.text = "Create"
     }
     
     // MARK: Methods
@@ -50,10 +51,6 @@ class LoginAndNewAccViewController: UIViewController {
     func sendJSONToServer(obj: JSON){
         // TODO: Send to server
     }
-    
-    
-    
-    
 
     /*
     // MARK: - Navigation
