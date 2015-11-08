@@ -50,9 +50,16 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextVi
         locationField.delegate = self
         descriptionField.delegate = self
         
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
+        //bring the nav bar back
+        navigationController?.navigationBar.hidden = false
+        navigationController?.navigationBar.barStyle = .Default
+        //navigationController?.setNeedsStatusBarAppearanceUpdate()
+        
         //event is passed so display the details for editing
         switch controllerState{
         case .Update:
@@ -147,8 +154,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         return true
     }
-    
-    
     
 }
 

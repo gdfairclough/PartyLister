@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		1F4B9A291BD1FC7500F8F503 /* ValidateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B9A281BD1FC7500F8F503 /* ValidateUser.swift */; };
 		1F4B9A2B1BD1FC8E00F8F503 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B9A2A1BD1FC8E00F8F503 /* SwiftyJSON.swift */; };
+		1F57DEB91BEC64E8002B745A /* EventDisplayLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57DEB81BEC64E7002B745A /* EventDisplayLayout.swift */; };
+		1F57DEBD1BEDA333002B745A /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57DEBC1BEDA333002B745A /* UIColor+Palette.swift */; };
 		1FC2A1EF1BEC55D1002D0CF9 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC2A1EE1BEC55D1002D0CF9 /* EventsViewController.swift */; };
+		1FC2A1F21BEC58F8002D0CF9 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC2A1F11BEC58F8002D0CF9 /* EventCell.swift */; };
 		1FC400001BCF2F2D006D4A58 /* PartyListerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4FFFF1BCF2F2D006D4A58 /* PartyListerUITests.swift */; };
 		1FC4FFDE1BCF2F2B006D4A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4FFDD1BCF2F2B006D4A58 /* AppDelegate.swift */; };
 		1FC4FFE01BCF2F2B006D4A58 /* EventsDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4FFDF1BCF2F2B006D4A58 /* EventsDisplayViewController.swift */; };
@@ -92,7 +95,10 @@
 /* Begin PBXFileReference section */
 		1F4B9A281BD1FC7500F8F503 /* ValidateUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateUser.swift; sourceTree = "<group>"; };
 		1F4B9A2A1BD1FC8E00F8F503 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		1F57DEB81BEC64E7002B745A /* EventDisplayLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDisplayLayout.swift; sourceTree = "<group>"; };
+		1F57DEBC1BEDA333002B745A /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		1FC2A1EE1BEC55D1002D0CF9 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		1FC2A1F11BEC58F8002D0CF9 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		1FC400011BCF2F2D006D4A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FC4FFDA1BCF2F2B006D4A58 /* PartyLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC4FFDD1BCF2F2B006D4A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F57DEBF1BEDA344002B745A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F57DEBC1BEDA333002B745A /* UIColor+Palette.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		1FC4FFD11BCF2F2A006D4A58 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +186,8 @@
 				1FDCC2001BDD774400688F70 /* SwiftyJSON */,
 				1FDCC2011BDD775800688F70 /* Storyboards */,
 				1F4B9A281BD1FC7500F8F503 /* ValidateUser.swift */,
+				1F57DEB81BEC64E7002B745A /* EventDisplayLayout.swift */,
+				1F57DEBF1BEDA344002B745A /* Extensions */,
 				1FC4FFE61BCF2F2C006D4A58 /* Assets.xcassets */,
 				1FC4FFEB1BCF2F2C006D4A58 /* Info.plist */,
 			);
@@ -228,6 +244,7 @@
 				1FDCC2031BDD781200688F70 /* Event.swift */,
 				1FDCC2051BDD7FCB00688F70 /* CreateEventViewController.swift */,
 				1FC2A1EE1BEC55D1002D0CF9 /* EventsViewController.swift */,
+				1FC2A1F11BEC58F8002D0CF9 /* EventCell.swift */,
 			);
 			name = EventFiles;
 			sourceTree = "<group>";
@@ -411,12 +428,15 @@
 				1FC4FFE01BCF2F2B006D4A58 /* EventsDisplayViewController.swift in Sources */,
 				1FC4FFDE1BCF2F2B006D4A58 /* AppDelegate.swift in Sources */,
 				1F4B9A2B1BD1FC8E00F8F503 /* SwiftyJSON.swift in Sources */,
+				1FC2A1F21BEC58F8002D0CF9 /* EventCell.swift in Sources */,
 				7C6CCB8D1BE733CF00DF130D /* LoginAndNewAccViewController.swift in Sources */,
 				1F4B9A291BD1FC7500F8F503 /* ValidateUser.swift in Sources */,
+				1F57DEBD1BEDA333002B745A /* UIColor+Palette.swift in Sources */,
 				1FDCC2081BDD8B2500688F70 /* LibraryAPI.swift in Sources */,
 				1FDCC20E1BDD91FB00688F70 /* HTTPClient.swift in Sources */,
 				1FDCC2041BDD781200688F70 /* Event.swift in Sources */,
 				1FDCC2061BDD7FCB00688F70 /* CreateEventViewController.swift in Sources */,
+				1F57DEB91BEC64E8002B745A /* EventDisplayLayout.swift in Sources */,
 				1FDCC20C1BDD91ED00688F70 /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
