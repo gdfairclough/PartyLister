@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1F4B9A291BD1FC7500F8F503 /* ValidateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B9A281BD1FC7500F8F503 /* ValidateUser.swift */; };
 		1F4B9A2B1BD1FC8E00F8F503 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B9A2A1BD1FC8E00F8F503 /* SwiftyJSON.swift */; };
+		1F57DEB91BEC64E8002B745A /* EventDisplayLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57DEB81BEC64E7002B745A /* EventDisplayLayout.swift */; };
+		1F57DEBD1BEDA333002B745A /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57DEBC1BEDA333002B745A /* UIColor+Palette.swift */; };
+		1FC2A1EF1BEC55D1002D0CF9 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC2A1EE1BEC55D1002D0CF9 /* EventsViewController.swift */; };
+		1FC2A1F21BEC58F8002D0CF9 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC2A1F11BEC58F8002D0CF9 /* EventCell.swift */; };
 		1FC400001BCF2F2D006D4A58 /* PartyListerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4FFFF1BCF2F2D006D4A58 /* PartyListerUITests.swift */; };
 		1FC4FFDE1BCF2F2B006D4A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4FFDD1BCF2F2B006D4A58 /* AppDelegate.swift */; };
 		1FC4FFE01BCF2F2B006D4A58 /* EventsDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4FFDF1BCF2F2B006D4A58 /* EventsDisplayViewController.swift */; };
@@ -55,41 +59,6 @@
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS Tests";
 		};
-		7C3017171BE862B300A6CD0C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C3017091BE862B300A6CD0C /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
-			remoteInfo = "Alamofire OSX";
-		};
-		7C3017191BE862B300A6CD0C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C3017091BE862B300A6CD0C /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
-			remoteInfo = "Alamofire OSX Tests";
-		};
-		7C30171B1BE862B300A6CD0C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C3017091BE862B300A6CD0C /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS";
-		};
-		7C30171D1BE862B300A6CD0C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C3017091BE862B300A6CD0C /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS Tests";
-		};
-		7C30171F1BE862B300A6CD0C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C3017091BE862B300A6CD0C /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E4202FE01B667AA100C997FB;
-			remoteInfo = "Alamofire watchOS";
-		};
 		7C3017231BE862CB00A6CD0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7C3017091BE862B300A6CD0C /* Alamofire.xcodeproj */;
@@ -126,6 +95,10 @@
 /* Begin PBXFileReference section */
 		1F4B9A281BD1FC7500F8F503 /* ValidateUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateUser.swift; sourceTree = "<group>"; };
 		1F4B9A2A1BD1FC8E00F8F503 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		1F57DEB81BEC64E7002B745A /* EventDisplayLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDisplayLayout.swift; sourceTree = "<group>"; };
+		1F57DEBC1BEDA333002B745A /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		1FC2A1EE1BEC55D1002D0CF9 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		1FC2A1F11BEC58F8002D0CF9 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		1FC400011BCF2F2D006D4A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FC4FFDA1BCF2F2B006D4A58 /* PartyLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC4FFDD1BCF2F2B006D4A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F57DEBF1BEDA344002B745A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F57DEBC1BEDA333002B745A /* UIColor+Palette.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		1FC4FFD11BCF2F2A006D4A58 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +186,8 @@
 				1FDCC2001BDD774400688F70 /* SwiftyJSON */,
 				1FDCC2011BDD775800688F70 /* Storyboards */,
 				1F4B9A281BD1FC7500F8F503 /* ValidateUser.swift */,
+				1F57DEB81BEC64E7002B745A /* EventDisplayLayout.swift */,
+				1F57DEBF1BEDA344002B745A /* Extensions */,
 				1FC4FFE61BCF2F2C006D4A58 /* Assets.xcassets */,
 				1FC4FFEB1BCF2F2C006D4A58 /* Info.plist */,
 			);
@@ -260,6 +243,8 @@
 			children = (
 				1FDCC2031BDD781200688F70 /* Event.swift */,
 				1FDCC2051BDD7FCB00688F70 /* CreateEventViewController.swift */,
+				1FC2A1EE1BEC55D1002D0CF9 /* EventsViewController.swift */,
+				1FC2A1F11BEC58F8002D0CF9 /* EventCell.swift */,
 			);
 			name = EventFiles;
 			sourceTree = "<group>";
@@ -279,11 +264,6 @@
 			children = (
 				7C3017141BE862B300A6CD0C /* Alamofire.framework */,
 				7C3017161BE862B300A6CD0C /* Alamofire iOS Tests.xctest */,
-				7C3017181BE862B300A6CD0C /* Alamofire.framework */,
-				7C30171A1BE862B300A6CD0C /* Alamofire OSX Tests.xctest */,
-				7C30171C1BE862B300A6CD0C /* Alamofire.framework */,
-				7C30171E1BE862B300A6CD0C /* Alamofire tvOS Tests.xctest */,
-				7C3017201BE862B300A6CD0C /* Alamofire.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -410,41 +390,6 @@
 			remoteRef = 7C3017151BE862B300A6CD0C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7C3017181BE862B300A6CD0C /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 7C3017171BE862B300A6CD0C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7C30171A1BE862B300A6CD0C /* Alamofire OSX Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire OSX Tests.xctest";
-			remoteRef = 7C3017191BE862B300A6CD0C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7C30171C1BE862B300A6CD0C /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 7C30171B1BE862B300A6CD0C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7C30171E1BE862B300A6CD0C /* Alamofire tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire tvOS Tests.xctest";
-			remoteRef = 7C30171D1BE862B300A6CD0C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7C3017201BE862B300A6CD0C /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 7C30171F1BE862B300A6CD0C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -479,15 +424,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC2A1EF1BEC55D1002D0CF9 /* EventsViewController.swift in Sources */,
 				1FC4FFE01BCF2F2B006D4A58 /* EventsDisplayViewController.swift in Sources */,
 				1FC4FFDE1BCF2F2B006D4A58 /* AppDelegate.swift in Sources */,
 				1F4B9A2B1BD1FC8E00F8F503 /* SwiftyJSON.swift in Sources */,
+				1FC2A1F21BEC58F8002D0CF9 /* EventCell.swift in Sources */,
 				7C6CCB8D1BE733CF00DF130D /* LoginAndNewAccViewController.swift in Sources */,
 				1F4B9A291BD1FC7500F8F503 /* ValidateUser.swift in Sources */,
+				1F57DEBD1BEDA333002B745A /* UIColor+Palette.swift in Sources */,
 				1FDCC2081BDD8B2500688F70 /* LibraryAPI.swift in Sources */,
 				1FDCC20E1BDD91FB00688F70 /* HTTPClient.swift in Sources */,
 				1FDCC2041BDD781200688F70 /* Event.swift in Sources */,
 				1FDCC2061BDD7FCB00688F70 /* CreateEventViewController.swift in Sources */,
+				1F57DEB91BEC64E8002B745A /* EventDisplayLayout.swift in Sources */,
 				1FDCC20C1BDD91ED00688F70 /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
