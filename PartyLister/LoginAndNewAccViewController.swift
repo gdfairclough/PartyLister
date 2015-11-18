@@ -1,9 +1,12 @@
-//
+//  ***********************
 //  LoginAndNewAccViewController.swift
 //  PartyLister
 //
 //  Created by Regina Velasquez on 11/1/15.
 //  Copyright © 2015 583. All rights reserved.
+//  ***********************
+//
+//  Views animated movement to acomodate the keyboard taken from http://www.ioscreator.com/tutorials/move-view-behind-keyboard-ios8-swift
 //
 
 import UIKit
@@ -11,6 +14,7 @@ import UIKit
 class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     
     var keyboardHeight: CGFloat!
+    var isKeyboardUp: Bool!
     
     // MARK: Textfields
     @IBOutlet weak var userNameTextField: UITextField!
@@ -39,8 +43,8 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        isKeyboardUp = false
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
@@ -58,16 +62,28 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     // MARK: Actions
     @IBAction func login(sender: UIButton) {
         // TODO: Validate
+        // TODO: Login get
+        // TODO: Create new acc post
     }
     
     @IBAction func createNewAccount(sender: UIButton) {
-        emailTextField.hidden = false
-        emailTextField.enabled = true
+        let str = sender.titleLabel!.text!
         
-        loginButton.titleLabel?.text = "Create"
-
-        orLabel.hidden = true
-        newAccButton.hidden = true
+        switch str {
+        case "Create new account":
+            emailTextField.hidden = false
+            emailTextField.enabled = true
+            loginButton.titleLabel?.text = "Create"
+            newAccButton.titleLabel?.text = "Cancel"
+        case "Cancel":
+            emailTextField.hidden = true
+            emailTextField.enabled = false
+            loginButton.titleLabel?.text = "Login"
+            newAccButton.titleLabel?.text = "Create new account"
+        default: break
+        }
+        
+        
     }
     
     // MARK: Methods
@@ -83,21 +99,26 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
         if let userInfo = notification.userInfo {
             if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
                 keyboardHeight = keyboardSize.height
-                self.animateViewsOffset(true)
+                if isKeyboardUp == false {
+                    self.animateViewsOffset(true)
+                }
             }
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.animateViewsOffset(false)
+        if isKeyboardUp == true {
+            self.animateViewsOffset(false)
+        }
     }
     
     func animateViewsOffset(up: Bool) {
         let offset = (up ? -keyboardHeight : keyboardHeight)
+        isKeyboardUp = up
         
         // Animate
         UIView.animateWithDuration(0.3, animations: {
-            self.view.frame = CGRectOffset(self.view.frame, 0, offset)
+            self.view.frame = CGRectOffset(self.view.frame, 0, offset/2)
         })
     }
     
