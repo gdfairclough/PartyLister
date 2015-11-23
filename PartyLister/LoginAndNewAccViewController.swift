@@ -10,6 +10,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     
@@ -76,7 +77,8 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
         }
         
         if (jsonStr != nil) {
-           sendJSONToServer(jsonStr)
+            toogleControllersTo(false)
+            sendJSONToServer(jsonStr)
         }
         
         // TODO: Validate
@@ -123,11 +125,33 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     }
     
     func sendJSONToServer(jsonString: String) {
-        // TODO: Send to server
         
-        print(jsonString)
+        Alamofire.request(.GET, "http://dalepi.duckdns.org:85")
+            .responseJSON {
+                //code placed in a callback so it is performed asynchronously and doesn't block the main thread
+                response in
+                
+                print("Get:")
+                print("request: \(response.request)")  // original URL request
+                print("response: \(response.response)") // URL response
+                print("response data \(response.data)")     // server data
+                print("response result \(response.result)")   // result of response serialization
+                
+                if let serverResponse = response.result.value{
+                    print("mystring session value is - \(serverResponse)")
+                }
+                
+        }
     }
 
+    func toogleControllersTo(boolean: Bool) {
+        userNameTextField.enabled = boolean
+        passwordTextField.enabled = boolean
+        emailTextField.enabled = boolean
+        loginButton.enabled = boolean
+        newAccButton.enabled = boolean
+    }
+    
     func keyboardWillShow(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
