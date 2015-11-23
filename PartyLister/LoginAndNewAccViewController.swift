@@ -13,6 +13,11 @@ import UIKit
 
 class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     
+    let loginBtnTitle = "Log in"
+    let createNewAccTitle = "Create new account"
+    let createAccTitle = "Create account"
+    let cancelTitle = "Cancel"
+    
     var keyboardHeight: CGFloat!
     var isKeyboardUp: Bool!
     
@@ -36,7 +41,6 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         emailTextField.delegate = self
         
-        emailTextField.enabled = false
         emailTextField.hidden = true
     }
     
@@ -62,14 +66,17 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     @IBAction func login(sender: UIButton) {
         let username = userNameTextField.text!
         let password = passwordTextField.text!
+        let email = emailTextField.text!
+        let jsonStr: String!
         
-        let jsonStr = createJSONWith(username, password: password, email: nil)
+        if (emailTextField.hidden) {
+            jsonStr = createJSONWith(username, password: password, email: nil)
+        } else {
+            jsonStr = createJSONWith(username, password: password, email: email)
+        }
         
         if (jsonStr != nil) {
            sendJSONToServer(jsonStr)
-        } else {
-            // TODO: pop up warning
-            print("empty fields")
         }
         
         // TODO: Validate
@@ -78,31 +85,39 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func createNewAccount(sender: UIButton) {
-        let str = sender.titleLabel!.text!
-        
-        switch str {
-        case "Create new account":
+        let btnTitleLabel = sender.titleLabel!.text ?? ""
+
+        if (btnTitleLabel.containsString(createNewAccTitle)) {
             emailTextField.hidden = false
-            emailTextField.enabled = true
-            loginButton.titleLabel?.text = "Create"
-            newAccButton.titleLabel?.text = "Cancel"
-        case "Cancel":
+            loginButton.setTitle(createAccTitle, forState: .Normal)
+            sender.setTitle(cancelTitle, forState: .Normal)
+        } else {
             emailTextField.hidden = true
-            emailTextField.enabled = false
-            loginButton.titleLabel?.text = "Login"
-            newAccButton.titleLabel?.text = "Create new account"
-        default: break
+            sender.setTitle(createNewAccTitle, forState: .Normal)
+            loginButton.setTitle(loginBtnTitle, forState: .Normal)
         }
-        
-        
     }
     
     // MARK: Methods
+    
+    /**
+    Creates a JSON string
+    
+    - parameter username:
+    - parameter password:
+    - parameter email:
+    
+    - returns: JSON string
+    */
     func createJSONWith(username: String, password: String, email: String!) -> String! {
         var strToReturn: String!
         
         if (!username.isEmpty && !password.isEmpty) {
-            strToReturn = "{user: {username: \"" + username + "\", password:\"" + password + "\"}}"
+            if (email == nil) {
+                strToReturn = "{user: {username:\"" + username + "\", password:\"" + password + "\"}}"
+            } else if (!email.isEmpty) {
+                strToReturn = "{user: {username:\"" + username + "\", password:\"" + password + "\", email:\"" + email + "\"}}"
+            }
         }
         return strToReturn
     }
