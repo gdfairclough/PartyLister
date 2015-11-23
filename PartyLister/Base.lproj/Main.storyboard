@@ -29,31 +29,30 @@
                                 <rect key="frame" x="40" y="285" width="520" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u74-zH-Mwh">
                                 <rect key="frame" x="40" y="323" width="520" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAn-bx-wNe">
-                                <rect key="frame" x="279" y="399" width="42" height="30"/>
+                                <rect key="frame" x="40" y="399" width="520" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
                                     <action selector="login:" destination="ZXq-UR-dsK" eventType="touchUpInside" id="tSL-ZG-25U"/>
-                                    <segue destination="hbl-5P-Lww" kind="show" id="cnO-ib-3jp"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter e-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gcu-uT-FHU">
                                 <rect key="frame" x="40" y="361" width="520" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0Y-pf-bKE">
-                                <rect key="frame" x="231" y="459" width="138" height="30"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0Y-pf-bKE">
+                                <rect key="frame" x="40" y="459" width="520" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Create new account"/>
                                 <connections>
@@ -79,10 +78,14 @@
                             <constraint firstItem="u74-zH-Mwh" firstAttribute="top" secondItem="ZJf-SQ-GAK" secondAttribute="bottom" constant="8" symbolic="YES" id="IWO-la-szD"/>
                             <constraint firstItem="h0Y-pf-bKE" firstAttribute="top" secondItem="PYp-Br-pvH" secondAttribute="bottom" constant="8" symbolic="YES" id="KgW-zo-GX6"/>
                             <constraint firstItem="CAn-bx-wNe" firstAttribute="top" secondItem="Gcu-uT-FHU" secondAttribute="bottom" constant="8" symbolic="YES" id="LlN-wX-Ias"/>
+                            <constraint firstItem="h0Y-pf-bKE" firstAttribute="leading" secondItem="CAn-bx-wNe" secondAttribute="leading" id="NZK-3e-4WE"/>
                             <constraint firstItem="h0Y-pf-bKE" firstAttribute="centerX" secondItem="lIR-C3-Xtb" secondAttribute="centerX" id="Oe5-IT-wNY"/>
                             <constraint firstItem="PYp-Br-pvH" firstAttribute="centerX" secondItem="lIR-C3-Xtb" secondAttribute="centerX" id="Ugj-Te-hYp"/>
                             <constraint firstItem="ZJf-SQ-GAK" firstAttribute="centerY" secondItem="lIR-C3-Xtb" secondAttribute="centerY" id="Wio-x3-L8e"/>
+                            <constraint firstItem="CAn-bx-wNe" firstAttribute="leading" secondItem="Gcu-uT-FHU" secondAttribute="leading" id="awj-I8-d1f"/>
                             <constraint firstItem="u74-zH-Mwh" firstAttribute="leading" secondItem="ZJf-SQ-GAK" secondAttribute="leading" id="dHB-Si-gRh"/>
+                            <constraint firstItem="h0Y-pf-bKE" firstAttribute="trailing" secondItem="CAn-bx-wNe" secondAttribute="trailing" id="e9m-7M-9NG"/>
+                            <constraint firstItem="CAn-bx-wNe" firstAttribute="trailing" secondItem="Gcu-uT-FHU" secondAttribute="trailing" id="haw-Jw-5mz"/>
                             <constraint firstItem="CAn-bx-wNe" firstAttribute="centerX" secondItem="lIR-C3-Xtb" secondAttribute="centerX" id="hbo-Ny-Rma"/>
                             <constraint firstItem="PYp-Br-pvH" firstAttribute="top" secondItem="CAn-bx-wNe" secondAttribute="bottom" constant="8" symbolic="YES" id="hyZ-ye-m1z"/>
                             <constraint firstItem="u74-zH-Mwh" firstAttribute="trailing" secondItem="ZJf-SQ-GAK" secondAttribute="trailing" id="qkO-Sm-uyp"/>
@@ -119,7 +122,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UM3-ch-Q6B" id="E4n-FD-1fV">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>

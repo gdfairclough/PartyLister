@@ -56,11 +56,22 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: Actions
     @IBAction func login(sender: UIButton) {
+        let username = userNameTextField.text!
+        let password = passwordTextField.text!
+        
+        let jsonStr = createJSONWith(username, password: password, email: nil)
+        
+        if (jsonStr != nil) {
+           sendJSONToServer(jsonStr)
+        } else {
+            // TODO: pop up warning
+            print("empty fields")
+        }
+        
         // TODO: Validate
         // TODO: Login get
         // TODO: Create new acc post
@@ -87,12 +98,19 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Methods
-    func createJSONWith(username: String, password: String, email: String) {
-        // TODO: Build Json object
+    func createJSONWith(username: String, password: String, email: String!) -> String! {
+        var strToReturn: String!
+        
+        if (!username.isEmpty && !password.isEmpty) {
+            strToReturn = "{user: {username: \"" + username + "\", password:\"" + password + "\"}}"
+        }
+        return strToReturn
     }
     
-    func sendJSONToServer(obj: JSON) {
+    func sendJSONToServer(jsonString: String) {
         // TODO: Send to server
+        
+        print(jsonString)
     }
 
     func keyboardWillShow(notification: NSNotification) {
