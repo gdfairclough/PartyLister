@@ -116,15 +116,16 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
         
         if (!username.isEmpty && !password.isEmpty) {
             if (email == nil) {
-                strToReturn = "{user: {username:\"" + username + "\", password:\"" + password + "\"}}"
+                strToReturn = "{\"LOGIN\":{\"USERNAME\":\"" + username + "\", \"PASSWORD\":\"" + password + "\"}}"
             } else if (!email.isEmpty) {
-                strToReturn = "{user: {username:\"" + username + "\", password:\"" + password + "\", email:\"" + email + "\"}}"
+                strToReturn = "{\"NEW_ACC\":{\"USERNAME\":\"" + username + "\", \"PASSWORD\":\"" + password + "\", \"EMAIL\":\"" + email + "\"}}"
             }
         }
         return strToReturn
     }
     
     func sendJSONToServer(jsonString: String) {
+        print(jsonString)
         
         Alamofire.request(.GET, "http://dalepi.duckdns.org:85")
             .responseJSON {
