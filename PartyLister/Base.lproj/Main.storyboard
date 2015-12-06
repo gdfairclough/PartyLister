@@ -43,6 +43,7 @@
                                 <state key="normal" title="Log in to existing account"/>
                                 <connections>
                                     <action selector="login:" destination="ZXq-UR-dsK" eventType="touchUpInside" id="tSL-ZG-25U"/>
+                                    <segue destination="xOl-ya-mEn" kind="show" id="Cf9-or-G7s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0Y-pf-bKE">
@@ -51,13 +52,14 @@
                                 <state key="normal" title="Create new account"/>
                                 <connections>
                                     <action selector="createNewAccount:" destination="ZXq-UR-dsK" eventType="touchUpInside" id="W7h-fb-bmu"/>
+                                    <segue destination="xOl-ya-mEn" kind="show" id="3YO-pt-peg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYp-Br-pvH">
                                 <rect key="frame" x="294" y="437" width="12" height="14.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter e-mail" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gcu-uT-FHU">
@@ -143,35 +145,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMQ-yo-FJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="-1480"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="KmM-fW-a3f">
-            <objects>
-                <navigationController id="hbl-5P-Lww" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XaG-DJ-oqp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nPQ-KN-so9">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="xOl-ya-mEn" kind="relationship" relationship="rootViewController" id="Vlf-lE-uVe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bX1-fs-Ose" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-58" y="-1365"/>
+            <point key="canvasLocation" x="1907" y="-792"/>
         </scene>
         <!--Events View Controller-->
         <scene sceneID="eTb-Ne-O0S">
             <objects>
-                <collectionViewController id="xOl-ya-mEn" customClass="EventsViewController" customModule="PartyLister" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="EventsVC" id="xOl-ya-mEn" customClass="EventsViewController" customModule="PartyLister" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5J1-AA-4fT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,7 +244,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ii-zS-mvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="-685"/>
+            <point key="canvasLocation" x="1902" y="-1489"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="jwg-th-orX">
@@ -406,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Po-AQ-cXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="-1365"/>
+            <point key="canvasLocation" x="2809" y="-1245"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MWF-Fj-JsV">
@@ -429,6 +408,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="isU-0V-3Wb"/>
+        <segue reference="Cf9-or-G7s"/>
+        <segue reference="ngQ-TI-oHl"/>
     </inferredMetricsTieBreakers>
 </document>

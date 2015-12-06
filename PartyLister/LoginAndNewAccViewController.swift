@@ -78,12 +78,11 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
         
         if (jsonStr != nil) {
             toogleControllersTo(false)
-            sendJSONToServer(jsonStr)
+            print(jsonStr)
         }
         
         // TODO: Validate
         // TODO: Login get
-        // TODO: Create new acc post
     }
     
     @IBAction func createNewAccount(sender: UIButton) {
@@ -98,6 +97,7 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
             sender.setTitle(createNewAccTitle, forState: .Normal)
             loginButton.setTitle(loginBtnTitle, forState: .Normal)
         }
+        // TODO: Create new acc post
     }
     
     // MARK: Methods
@@ -126,23 +126,6 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
     
     func sendJSONToServer(jsonString: String) {
         print(jsonString)
-        
-        Alamofire.request(.GET, "http://dalepi.duckdns.org:85")
-            .responseJSON {
-                //code placed in a callback so it is performed asynchronously and doesn't block the main thread
-                response in
-                
-                print("Get:")
-                print("request: \(response.request)")  // original URL request
-                print("response: \(response.response)") // URL response
-                print("response data \(response.data)")     // server data
-                print("response result \(response.result)")   // result of response serialization
-                
-                if let serverResponse = response.result.value{
-                    print("mystring session value is - \(serverResponse)")
-                }
-                
-        }
     }
 
     func toogleControllersTo(boolean: Bool) {
@@ -185,15 +168,4 @@ class LoginAndNewAccViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
