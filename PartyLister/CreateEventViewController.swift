@@ -85,6 +85,12 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     @IBAction func saveEvent(sender: AnyObject) {
         
+        let curId: Int
+        if let Id = event?.eventId{
+            curId = Id
+        }else{
+            curId = -1
+        }
         let name = nameField.text!
         let description = descriptionField.text!
         let location = locationField.text!
@@ -92,20 +98,12 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextVi
         let end = endPicker.date
         let date = datePicker.date
         
-        //create an event object from the gathered info
-        let newEvent = Event(name: name, location: location, date: date, start: start, end: end, description: description)
+       
+        let newEvent = Event(id: curId,name: name, location: location, date: date, start: start, end: end, description: description)
+      
         
         //update or create an event
-        if let _ = event,
-           let curIndex = eventIndex{
-            
-           LibraryAPI.sharedInstance.changeEvent(atIndex: curIndex, newEvent: newEvent)
-            
-        }else{
-            
-            //save event to storage / database
-            LibraryAPI.sharedInstance.addEvent(newEvent)
-        }
+        LibraryAPI.sharedInstance.addEvent(newEvent)
         
         print(event?.description)
         

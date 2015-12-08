@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class HTTPClient: NSObject {
-    
+   
     func addEvent(newEvent: Event){
         
         //format the NSDate for passing via JSON
@@ -20,10 +20,18 @@ class HTTPClient: NSObject {
         let eventDate = dateFormatter.stringFromDate(newEvent.eventDate)
         let eventStart = dateFormatter.stringFromDate(newEvent.eventStart)
         let eventEnd = dateFormatter.stringFromDate(newEvent.eventEnd)
+        let eventId: Int
+        if let newEventId = newEvent.eventId {
+            
+            eventId = newEventId
+        }else{
+            eventId = -1
+        }
         
         let eventDict: [String: AnyObject] =
         [
             "EVENT_INFO": [
+                "ID": eventId,
                 "NAME": newEvent.eventName,
                 "DATE": eventDate,
                 "START": eventStart,
@@ -61,12 +69,7 @@ class HTTPClient: NSObject {
         
         
     }
-    
-    func changeEvent(atIndex index: Int, newEvent: Event){
-        
-        
-        
-    }
+ 
     
     func getEvents(){
         

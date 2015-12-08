@@ -31,4 +31,22 @@ class PersistencyManager: NSObject {
         
         return events[index]
     }
+    
+    /**
+     Update an event by using the id of the event as the key
+    */
+    func updateEvent(event: Event){
+        
+        //events.map({$0 = event where $0.eventId = event.eventId})
+        
+        for i in 0..<events.count{
+            if events[i].eventId == event.eventId{
+                events[i] = event
+                return
+            }
+        }
+        //couldn't find it in the array, so add it
+        addEvent(event)
+        
+    }
 }

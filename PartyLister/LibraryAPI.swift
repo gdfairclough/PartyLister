@@ -48,15 +48,15 @@ class LibraryAPI: NSObject {
     }
     
     func addEvent(newEvent: Event){
-        
-        persistencyManager.addEvent(newEvent)
+        //add event if id is -1, otherwise update
+        if newEvent.eventId == -1 {
+            persistencyManager.addEvent(newEvent)
+        }else{
+            persistencyManager.updateEvent(newEvent)
+        }
         serverClient.addEvent(newEvent)
     }
-    
-    func changeEvent(atIndex index: Int, newEvent: Event){
-        persistencyManager.changeEvent(atIndex: index, newEvent: newEvent)
-        serverClient.changeEvent(atIndex: index, newEvent: newEvent)
-    }
+  
     
     func testEventCreate(){
         

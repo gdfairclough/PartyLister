@@ -28,15 +28,15 @@ class EventsViewController: UICollectionViewController{
         
         let date = NSDate()
         
-        let event = Event(id: 0, name: "Celebrate Samhain", location: "Noelle's", date: date, start: date, end: date, description: "Woot")
+        let event = Event(id: 1,name: "Celebrate Samhain", location: "Noelles", date: date, start: date, end: date, description: "Woot")
         events.append(event)
         LibraryAPI.sharedInstance.addEvent(event)
-        var event1 = Event(id: 0, name: "Cow Party", location: "Matt's", date: date, start: date, end: date, description: "Woot")
-        events.append(event1)
-        LibraryAPI.sharedInstance.addEvent(event1)
-        event1 = Event(id: 0, name: "Cow Tipping", location: "Dale's", date: date, start: date, end: date, description: "Woot")
-        events.append(event1)
-        LibraryAPI.sharedInstance.addEvent(event1)
+        //var event1 = Event(name: "Cow Party", location: "Matts", date: date, start: date, end: date, description: "Woot")
+        //events.append(event1)
+        //LibraryAPI.sharedInstance.addEvent(event1)
+        //event1 = Event(name: "Cow Tipping", location: "Dales", date: date, start: date, end: date, description: "Woot")
+        //events.append(event1)
+        //LibraryAPI.sharedInstance.addEvent(event1)
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
