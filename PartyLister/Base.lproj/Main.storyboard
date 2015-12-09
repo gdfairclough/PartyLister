@@ -52,7 +52,6 @@
                                 <state key="normal" title="Create new account"/>
                                 <connections>
                                     <action selector="createNewAccount:" destination="ZXq-UR-dsK" eventType="touchUpInside" id="W7h-fb-bmu"/>
-                                    <segue destination="xOl-ya-mEn" kind="show" id="3YO-pt-peg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYp-Br-pvH">
@@ -408,7 +407,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cf9-or-G7s"/>
         <segue reference="ngQ-TI-oHl"/>
     </inferredMetricsTieBreakers>
 </document>
