@@ -52,6 +52,11 @@ class LoginAndNewAccViewController: UIViewController {
         // TODO: Send to server
     }
 
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        userNameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+    }
     /*
     // MARK: - Navigation
 
